@@ -122,3 +122,29 @@ img {
     transform: translateY(0);
 }
 
+.article header {
+    border-top: 1px dashed #d2d2d2;
+}
+
+header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.article header .date {
+    text-align: center;
+    font-size: 1em;
+    margin-top: -0.7em;
+}
+
+.data {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.article header .date span {
+    background-color: #f8f8f8;
+    padding: 0 0.7em;
+}
