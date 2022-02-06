@@ -1,0 +1,124 @@
+:root {
+    --accent-color: #400AA7;
+}
+
+html, body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+nav {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+nav h4 {
+    display: inline;
+    position: relative;
+    bottom: 12px;
+    padding-left: 10px;
+}
+
+nav a {
+    margin-right: 20px;
+}
+
+nav a :first-child {
+    margin-right: 0;
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: #0c0221;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+.subtitle {
+    color: #949494;
+}
+
+.center {
+    text-align: center;
+}
+
+.footer {
+    padding: 20px 0;
+}
+
+.footer .subtitle {
+    color: #767676;
+}
+
+img {
+    max-width: 50%;
+    width: 100%;
+}
+
+.img-grid {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5%;
+}
+
+.img-grid img {
+    max-width: 100%;
+}
+
+.img-grid-desc-layer {
+    position: absolute;
+    top: 0;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+    background: #0005;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.img-grid:hover .img-grid-desc-layer {
+    visibility: visible;
+    opacity: 1;   
+}
+
+.img-grid-desc {
+    transition: 0.2s;
+    transform: translateY(1em);
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.img-grid:hover .img-grid-desc {
+    transform: translateY(0);
+}
+
