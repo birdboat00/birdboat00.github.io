@@ -14,7 +14,8 @@ h6 { font-size: 1.3rem; }
 a { color: var(--accent); text-decoration: none; }
 a:hover, a:focus { color: var(--accent-focus); }
 footer { text-align: center; }
-#rndq { font-size: 0.9rem; }
+small#rndq { font-size: 0.9rem; }
+small#copyright { font-size: 0.7rem; }
 small { color: var(--text-light);}
 ul { list-style-type: circle; }
 ol { list-style-type: decimal-leading-zero; }
