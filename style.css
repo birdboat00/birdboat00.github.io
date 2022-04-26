@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
-:root { --accent-focus: #19a35e; --accent: #14824b; --text-light: #777; }
+:root { --text: #333; --bg: #fff; --cbg: #eee; --accent-focus: #19a35e; --accent: #14824b; --text-light: #777; --footer-first-icon: "🌲"; --footer-second-icon: "💚"; }
+html[data-theme="eup"] { --accent: #201F61; --accent-focus: #b59cde; --footer-first-icon: "🍇"; --footer-second-icon: "💜"; }
+html[data-theme="mds"] { --accent: #73323c; --accent-focus: #c29774; --footer-first-icon: "🍁"; --footer-second-icon: "🧡"; }
 body { margin: 0; padding: 0; border: 0; font-size: 1.25rem;
     font-family: "open sans", helvetica, arial, sans-serif;
-    font-weight: 300; }
+    font-weight: 300; color: var(--text); background: var(--bg); }
 main { max-width: 650px; min-width: 320px; margin: 0 auto; padding: 0 40px; }
 h1, h2, h3, h4, h5, h6 { font-weight: 500; text-transform: uppercase; margin-bottom: 20px; }
 h1 { font-size: 4rem; }
@@ -11,12 +13,14 @@ h3 { font-size: 1.8rem; }
 h4 { font-size: 1.7rem; }
 h5 { font-size: 1.5rem; }
 h6 { font-size: 1.3rem; }
-a { color: var(--accent); text-decoration: none; }
+a { font-weight: 400; color: var(--accent); text-decoration: none; }
 a:hover, a:focus { color: var(--accent-focus); }
 footer { text-align: center; }
-small#rndq { font-size: 0.9rem; }
+footer #hff:after { content: var(--footer-first-icon); }
+footer #hfs:after { content: var(--footer-second-icon); }
+small#rndq { font-size: 0.5rem; }
 small#copyright { font-size: 0.7rem; }
 small { color: var(--text-light);}
 ul { list-style-type: circle; }
 ol { list-style-type: decimal-leading-zero; }
-code, pre { background-color: #f9f9f9; }
+code, pre { background-color: var(--cbg); }

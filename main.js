@@ -1,4 +1,3 @@
-const rndq = document.getElementById("rndq")
 const qs = [
   // alice in wonderland
   "We are all mad here...",
@@ -28,4 +27,4 @@ const qs = [
   "It may seem like a small role nowm but it matters. In the end, everything matters.",
   ""
 ]
-rndq.innerText = qs[Math.floor(Math.random() * qs.length)]
+document.getElementById("rndq").innerText = qs[Math.floor(Math.random() * qs.length)]
