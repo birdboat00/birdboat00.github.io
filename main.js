@@ -25,6 +25,10 @@ const qs = [
   "After all, how often do we get a second chance?",
   "But sometimes there's nothing left to do but move on.",
   "It may seem like a small role nowm but it matters. In the end, everything matters.",
-  ""
+  // euphoria
+  "Memories exist outside of time.",
+  // midsommar
+  "Trust me. Alright?",
+
 ]
 const M=Math; rq.innerText = qs[M.floor(M.random() * qs.length)]
