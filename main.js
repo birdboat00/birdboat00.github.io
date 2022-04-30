@@ -27,4 +27,4 @@ const qs = [
   "It may seem like a small role nowm but it matters. In the end, everything matters.",
   ""
 ]
-document.getElementById("rndq").innerText = qs[Math.floor(Math.random() * qs.length)]
+const M=Math; rq.innerText = qs[M.floor(M.random() * qs.length)]
