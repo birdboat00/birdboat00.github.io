@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> | bb00</title>
+  <link rel="stylesheet" href="../style.css">
+  <script type="module">
+    import { essay } from "./essay.mjs"
+    essay({ name: "test", contentfile: "test.md" })
+  </script>
+</head>
+<body>
+  <main>
+    <div id="essay-content"></div>
+  </main>
+  <footer>
+    <small>bb00 <span id="hff"></span> ∷ Made with <span id="hfs"></span></small>
+    <br>
+    <small id="c">Written content on this site is provided under the CC-BY-4.0
+      license.
+      Code is provided under a 0BSD license unless otherwise stated.</small>
+  </footer>
+</body>
+</html>

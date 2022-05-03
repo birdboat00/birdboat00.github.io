@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
-:root { --text: #333; --bg: #fff; --cbg: #eee; --accent-focus: #19a35e; --accent: #14824b; --text-light: #777; --footer-first-icon: "🌲"; --footer-second-icon: "💚"; }
-html[data-theme="eup"] { --accent: #201F61; --accent-focus: #b59cde; --footer-first-icon: "🍇"; --footer-second-icon: "💜"; }
-html[data-theme="mds"] { --accent: #73323c; --accent-focus: #c29774; --footer-first-icon: "🍁"; --footer-second-icon: "🧡"; }
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&family=Open+Sans:wght@300;500&display=swap');
+:root { --txt: #333; --bg: #fff; --cbg: #eee; --acc-foc: #19a35e; --acc: #14824b; --txt-l: #777; --footer-i1: "🌲"; --footer-i2: "💚"; }
+html[data-theme="eup"] { --acc: #201F61; --acc-foc: #b59cde; --footer-i1: "🍇"; --footer-i2: "💜"; }
+html[data-theme="mds"] { --acc: #73323c; --acc-foc: #c29774; --footer-i1: "🍁"; --footer-i2: "🧡"; }
 body { margin: 0; padding: 0; border: 0;
-  font: 300 1.25rem "open sans", sans-serif;
-  color: var(--text); background: var(--bg); }
+  font: 300 1.25rem 'open sans', sans-serif;
+  color: var(--txt); background: var(--bg); }
 main { width: clamp(320px, 100%, 650px); margin: 0 auto; padding: 0 40px; }
 h1, h2, h3, h4, h5, h6 { font-weight: 500; margin-bottom: 20px; }
 h1 { font-size: 4rem; }
@@ -13,13 +13,16 @@ h3 { font-size: 1.8rem; }
 h4 { font-size: 1.7rem; }
 h5 { font-size: 1.5rem; }
 h6 { font-size: 1.3rem; }
-a { font-weight: 400; color: var(--accent); text-decoration: none; }
-a:hover, a:focus { color: var(--accent-focus); }
+a { font-weight: 400; color: var(--acc); text-decoration: none; }
+a:hover, a:focus { color: var(--acc-foc); }
 footer { text-align: center; margin: 24px; }
-footer #hff:after { content: var(--footer-first-icon); }
-footer #hfs:after { content: var(--footer-second-icon); }
+footer #hff:after { content: var(--footer-i1); }
+footer #hfs:after { content: var(--footer-i2); }
 span#rq, small#c { font-size: 0.7rem; }
-small { color: var(--text-light);}
+small { color: var(--txt-l);}
 ul { list-style-type: circle; }
 ol { list-style-type: decimal-leading-zero; }
-code, pre { background-color: var(--cbg); }
+code, pre { font-family: 'fira mono', monospace; background: var(--cbg); }
+#logo { font-family: 'fira mono', monospace; font-weight: 300; }
+.c-paren { color: var(--acc-foc); font-weight: 500; }
+.c-fn { color: var(--acc); font-weight: 500; }
