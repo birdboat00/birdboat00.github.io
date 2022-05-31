@@ -13,5 +13,4 @@ const qs = [
   "One thing was certain, that the white kitten had nothing to do with it -- it was the black kitten's failt entirely.",
   "You've been gone too long, Alice. There are matters which might benefit from your attention. Friends cannot be neglected.",
   "I've always wondered when soon is."
-]
-const M=Math; rq.innerText = qs[M.floor(M.random() * qs.length)]
+];const M=Math;rq.innerText=qs[M.floor(M.random()*qs.length)]
