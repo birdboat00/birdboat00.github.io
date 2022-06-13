@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&family=Open+Sans:wght@300;500&display=swap');
-:root { --txt: #333; --bg: #fff; --cbg: #eee; --acc-foc: #19a35e; --acc: #14824b; --txt-l: #777; --footer-i1: "🌲"; --footer-i2: "💚"; 
-        --font-n: 'open sans', sans-serif; --font-m: 'fira mono', monospace; }
+:root { --txt: #3E4349; --bg: #fff; --cbg: #eee; --acc-foc: #19a35e; --acc: #14824b; --txt-l: #777; --footer-i1: "🌲"; --footer-i2: "💚"; 
+        --font-n: georgia, serif; --font-m: 'fira mono', monospace; }
 html[data-theme="eup"] { --acc: #201F61; --acc-foc: #b59cde; --footer-i1: "🍇"; --footer-i2: "💜"; }
 html[data-theme="mds"] { --acc: #73323c; --acc-foc: #c29774; --footer-i1: "🍁"; --footer-i2: "🧡"; }
 body { margin: 0; padding: 0; border: 0;
