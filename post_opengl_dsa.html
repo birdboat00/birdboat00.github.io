@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bb00 | post: OpenGL DSA</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <span id="homelink"><a href="index.html">(hello [i am] bb00)</a></span>
+    <span id="navlinks"><a href="writing.html">writing and projects</a></span>
+  </nav>
+
+  <h2>OpenGL DSA cheatsheet</h2>
+  <article>
+    <h3>Buffers</h3>
+    <pre><code>
+// create buffer
+GLuint _buffer { 0 };
+glCreateBuffers(1, std::addressof(_buffer));
+// store buffer data
+glNamedBufferStorage(_buffer, sizeof(data), data, 0 /*flags*/);
+    </code></pre>
+    <h3>VAO</h3>
+    <pre><code>
+// create and bind vao
+GLuint _vao { 0 };
+glCreateVertexArray(1, std::addressof(_vao));
+glBindVertexArray(_vao);
+
+// set up attribute
+glEnableVertexArrayAttrib(_vao, 0);
+glVertexArrayAttribFormat(_vao, 0, 3 /* size */, GL_FLOAT, false, 0 /* stride */);
+glVertexArrayAttribBinding(_vao, 0, 0);
+
+// set buffer for vao
+glVertexArrayVertexBuffer(_vao, 0, _buffer, 0 /* offset */, sizeof(float) * 3 /* stride */);
+// set index buffer for vao
+glVertexArrayElementBuffer(_vao, buffer);
+
+// draw vao
+glBindVertexArray(_vao);
+// unindexed
+glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices) / sizeof(float));
+// indexed
+glDrawElements(GL_TRIANGLES, count, indices_format, ind_offset);
+    </code></pre>
+    <h3>Textures</h3>
+    <pre><code>
+// create texture
+GLuint _texture { 0 };
+glCreateTextures(GL_TEXTURE_2D /* target */, 1, std::addressof(_texture));
+
+// set parameters
+glTextureParameteri(_texture, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+// upload data to texture
+glTextureStorage2D(_texture, 1, GL_RGBA9, width, height);
+glTextureSubImage2D(_texture, 0, 0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+
+// bind texture
+glBindTextureUnit(1, _texture);
+    </code></pre>
+    <h3>Framebuffers</h3>
+    <pre><code>
+// create framebuffer
+GLuint _fb { 0 };
+glCreateFramebuffers(1, std::addressof(_fb));
+
+glNamedFramebufferTexture(_fb, GL_COLOR_ATTACHMENT0, tex, 0);
+glNamedFramebufferTexture(_fb, GL_DEPTH_ATTACHMENT, depth_tex, 0);
+
+if (glCheckNamedFramebufferStatus(_fb, GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
+  // handle error
+}
+
+// blit framebuffers
+glBlitNamedFramebuffer(_fb_src, _fb_dest, src_x, src_y, src_w, src_h, dest_x, dest_y, dest_w, dest_h, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+
+// clear buffer (0 is name for default framebuffer)
+glClearNamedFramebufferfv(_fb, GL_COLOR, col_buf_idx, std::addressof(rgba));
+glClearNamedFramebufferfv(_fb, GL_DEPTH, 0, std::addressof(depth));
+    </code></pre>
+    <h3>Debug Output</h3>
+    <pre><code>
+// set debug callback
+glEnable(GL_DEBUG_OUTPUT);
+// message_callback = void (GLenum src, GLenum type, GLuint id, GLenum severity, GLsizei len, GLchar const* msg, void const* userparam)
+glDebugMessageCallback(message_callback, nullptr /* user param */);
+
+// filter debug messages
+glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DEBUG_SEVERITY_NOTIFICATION, 0, nullptr, GL_FALSE);
+    </code></pre>
+  </article>
+</body>
+</html>
