@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bb00 | Personal Code Style Guide</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <span id="homelink"><a href="index.html">(hello [i am] bb00)</a></span>
+    <span id="navlinks"><a href="writing.html">writing and projects</a></span>
+  </nav>
+
+  <h2>Personal Code Style Guide</h2>
+  <article>
+    <p>This is my personal C++ code style guide.
+    </p>
+    <section>
+      <h3>General</h3>
+      <p></p>
+    </section>
+    <section>
+      <h3>Example Code</h3>
+      <pre><code>#include &lt;iostream&gt;
+
+namespace foo::bar {
+  template&lt;typename T&gt;
+  class baz {
+    public:
+      baz();
+      ~baz();
+
+      u32 private_member() const;
+      void private_member(u32 new_value) noexcept;
+
+      T public_member;
+    private:
+      u32 _private_member;
+  };
+
+  int main(i32 argc, char** argv) {
+    if (argc > 1) {
+      return 1;
+    }
+
+    baz&lt;f32&gt; my_baz;
+    
+    std::cout << "Hello, World!" << std::endl;
+
+    return 0;
+  }
+}
+      </code></pre>
+    </section>
+    <section>
+      <h3>Naming Conventions</h3>
+      <ul>
+        <li>All code and comments should use U.K. English spelling and grammar</li>
+        <li>All names are <code>snake_case</code>, the only exception are constants, which are in <code>kCamelCase</code>.</li>
+        <li>Private members use leading underscore, like <code>_private_member</code></li>
+        <li>Classes that are abstract interfaces are named like <code>Iclass_name</code>.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Formatting</h3>
+      <p>Indentation uses spaces. The size of one tab is 2 spaces.</p>
+      <p>Braces are placed on the same line as the statement, like</p>
+<pre><code>if (expression) {</code>
+<code>}</code></pre>
+      <p>The preffered line limit is between 80 and 100 characters.</p>
+      <p>Pointers and references shall be declared like <code>T& x</code></p>
+    </section>
+    <section>
+      <h3>Portable C++ code</h3>
+      <ul>
+        <li><code>bool</code> for boolean values.</li>
+        <li><code>char</code> for characters.</li>
+        <li><code>iN (intN_t)</code> and <code>uN (uintN_t)</code> for signed and unsigned integers types with bit size of <code>N</code>.</li>
+        <li><code>f32 (float)</code> for single precision floating point (4 bytes).</li>
+        <li><code>f64 (double)</code> for double precision floating point (8 bytes).</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Use of C++ STL standard library</h3>
+      <p>The use of C++ STL types is encouraged and preferred. The C++ STL
+        should be preferred over C standard library functions.
+      </p>
+    </section>
+    <section>
+      <h3>Comments</h3>
+      <p>You should write self-documenting code if possible. But comments are allowed.</p>
+      <p>C++ Style comments (<code>// comment ... ... ... ...</code>) are preffered.</p>
+    </section>
+    <section>
+      <h3>Files</h3>
+      <ul>
+        <li>File name shall be treated as case sensitive.</li>
+        <li>File names shall be lower case, shall not contain spaces and shall use underscores as word seperator.</li>
+        <li>C source files shall have the extension <code>.c</code>.</li>
+        <li>C header files shall have the extension <code>.h</code>.</li>
+        <li>C++ source files shall have the extension <code>.cc</code>.</li>
+        <li>C++ header files shall have the extension <code>.hh</code>.</li>
+        <li>Header files must have include guards. The use of <code>#pragma once</code> is preferred.</li>
+        <li>Public headers shall be included with <code>&lt;&gt;</code>, private headers shall be included with <code>""</code>.</li>
+        <li>Put include directives at the top of files.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Statements</h3>
+      <ul>
+        <li>Use gotos only if they have a big performance benefit.</li>
+        <li>All switch statements shall have a default label, even if all values are covered by case labels.
+          If all values are covered by case labels an assert shall be placed in the default label.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Semantics</h3>
+      <p>Use plenty of assertions.</p>
+      <p>Always validate function input.</p>
+    </section>
+    <section>
+      <h3>nullptr</h3>
+      <p><code>nullptr</code> should be used instead of the C-style <code>NULL</code> macro in all cases.</p>
+    </section>
+  </article>
+</body>
+</html>
